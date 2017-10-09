@@ -19,8 +19,8 @@ public class Singleton {
 
     public String getText(){
 
-        Locale local = new Locale(a);
-        ResourceBundle label1 = ResourceBundle.getBundle("I18N", local);
+        Locale local = new Locale("es", "ES");
+        ResourceBundle label1 = ResourceBundle.getBundle("I18N.Language", local);
         return label1.getString("T1");
     }
 }
