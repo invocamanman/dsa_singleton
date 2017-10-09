@@ -1,3 +1,0 @@
-T1=Holaa
-T2=em
-T3=dic
