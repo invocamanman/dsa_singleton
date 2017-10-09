@@ -5,9 +5,9 @@ public class Singleton {
 
     String a;
     private static Singleton instance = null;
-    private Singleton(String lan) {
+    private Singleton() {
 
-        a= lan;
+        a= "ca";
         // Exists only to defeat instantiation.
     }
     public static Singleton getInstance() {
