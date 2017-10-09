@@ -3,7 +3,7 @@
 public class Singleton {
 
     String a;
-    private Singleton instance = null;
+    private static Singleton instance = null;
     private Singleton() {
 
         a= "asd";
@@ -11,7 +11,7 @@ public class Singleton {
     }
     public static Singleton getInstance() {
         if(instance == null) {
-            instance = new ClassicSingleton();
+            instance = new Singleton();
         }
         return instance;
     }
