@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -5,9 +6,10 @@ public class Singleton {
 
     String a;
     private static Singleton instance = null;
+    private HashMap<String,Locale> idiomas = new HashMap<String,Locale>();
+
     private Singleton() {
 
-        a= "ca";
         // Exists only to defeat instantiation.
     }
     public static Singleton getInstance() {
@@ -17,10 +19,17 @@ public class Singleton {
         return instance;
     }
 
-    public String getText(){
+    public String getText(String idioma, String country){
 
-        Locale local = new Locale("es", "ES");
+        if(null == idiomas.get(country)){
+
+            idiomas.put(country, new Locale(idioma,country));
+
+        }
+
+        Locale local = idiomas.get(country);
         ResourceBundle label1 = ResourceBundle.getBundle("I18N.Language", local);
         return label1.getString("T1");
+
     }
 }
